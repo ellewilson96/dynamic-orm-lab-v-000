@@ -55,4 +55,3 @@ require 'active_support/inflector'
     DB[:conn].execute(sql)
   end
 end
-end

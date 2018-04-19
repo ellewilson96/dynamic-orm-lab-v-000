@@ -54,4 +54,10 @@ require 'active_support/inflector'
     sql = "SELECT * FROM #{self.table_name} WHERE name = '#{name}'"
     DB[:conn].execute(sql)
   end
+
+  def find_by(option={})
+    option.each do |property, value|
+    sql = "SELECT * FROM #{self.table_name} WHERE property = ?, property"
+    DB[:conn].execute(sql)
+  end
 end

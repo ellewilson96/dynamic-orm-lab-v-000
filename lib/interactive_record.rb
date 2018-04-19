@@ -55,8 +55,8 @@ require 'active_support/inflector'
     DB[:conn].execute(sql)
   end
 
-  def self.find_by(option={})
-    option.each do |property|
+  def self.find_by(option = {})
+    option.map do |property|
     sql = "SELECT * FROM #{self.table_name} WHERE '#{self.column_names}' = ?"
     DB[:conn].execute(sql)
   end
